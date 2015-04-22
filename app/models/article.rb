@@ -2,8 +2,8 @@ class Article < ActiveRecord::Base
 
     belongs_to :category
 
-    validates_prescence_of :content, :title
+    validates_presence_of :title, :content
 
-    scope :alphabetical, -> { order(:name) }
+    scope :alphabetical, -> { order(:title) }
     scope :active, -> { where(active: true) }
 end
